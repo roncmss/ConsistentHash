@@ -17,7 +17,6 @@
 package com.github.jaskey.consistenthash.sample;
 
 import com.github.jaskey.consistenthash.ConsistentHashRouter;
-import com.github.jaskey.consistenthash.Node;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -47,7 +46,7 @@ public class DistributionTestSample{
 
         System.out.println("==========output distribution result==========");
         System.out.println(goRoute(consistentHashRouter, requestIps.toArray(new String[requestIps.size()])).toString());
-
+        consistentHashRouter.showRing();
 
     }
 

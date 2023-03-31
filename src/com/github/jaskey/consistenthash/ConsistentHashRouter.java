@@ -18,10 +18,7 @@ package com.github.jaskey.consistenthash;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.SortedMap;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * @author linjunjie1103@gmail.com
@@ -136,6 +133,12 @@ public class ConsistentHashRouter<T extends Node> {
                 h |= ((int) digest[i]) & 0xFF;
             }
             return h;
+        }
+    }
+
+    public void showRing() {
+        for (VirtualNode<T> value : ring.values()) {
+            System.out.println(value.getKey());
         }
     }
 
